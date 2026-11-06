@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from 'react'
+import Navbar from './Components/Navbar/Navbar'
 
-function App() {
 
-  return (
-    <>
-      <h1>hello</h1>
-    </>
-  )
+const App = () => {
+
+    const current_theme = localStorage.getItem('current_theme');
+
+    const [theme, setTheme] = useState(current_theme ? current_theme : 'light');
+
+    useEffect(() => {
+        localStorage.setItem('current_theme', theme)
+    },[theme]);
+
+    return (
+        <div className={`container ${theme}`}>
+            <Navbar theme={theme} setTheme={setTheme} />
+        </div>
+    )
 }
 
-export default App
+export default App;

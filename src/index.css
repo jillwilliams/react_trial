@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Iceland";
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background: #ced8ff;
+    transition: 1s;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.container.dark {
+    background: #222;
+}
